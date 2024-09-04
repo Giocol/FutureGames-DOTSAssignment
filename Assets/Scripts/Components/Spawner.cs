@@ -7,7 +7,9 @@ namespace Components
     public struct Spawner : IComponentData
     {
         public Entity prefab;
-        public float3 spawnPosition;
+        public float2 xSpawnRange;
+        public float2 ySpawnRange;
+        public float2 zSpawnRange;
         public float nextSpawnTime;
         public float spawnRate;
     }

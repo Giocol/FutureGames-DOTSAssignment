@@ -1,6 +1,9 @@
 ﻿using Unity.Burst;
 using Unity.Entities;
+using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Systems
 {
@@ -49,8 +52,10 @@ namespace Systems
                 return;
             }
 
+            float3 spawnPosition = new float3(Random.Range(spawner.xSpawnRange.x, spawner.xSpawnRange.y), Random.Range(spawner.ySpawnRange.x, spawner.ySpawnRange.y), Random.Range(spawner.zSpawnRange.x, spawner.zSpawnRange.y));
+
             Entity newEntity = ecb.Instantiate(chunkIndex, spawner.prefab);
-            ecb.SetComponent(chunkIndex, newEntity, LocalTransform.FromPosition(spawner.spawnPosition));
+            ecb.SetComponent(chunkIndex, newEntity, LocalTransform.FromPosition(spawnPosition));
 
             spawner.nextSpawnTime = (float)elapsedTime + spawner.spawnRate;
         }

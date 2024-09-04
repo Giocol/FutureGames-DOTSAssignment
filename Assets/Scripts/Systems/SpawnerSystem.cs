@@ -2,8 +2,6 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Systems
 {
@@ -43,6 +41,8 @@ namespace Systems
         public EntityCommandBuffer.ParallelWriter ecb;
         public double elapsedTime;
 
+        private Random random;
+
         // IJobEntity generates a component data query based on the parameters of its `Execute` method.
         // This example queries for all Spawner components and uses `ref` to specify that the operation
         // requires read and write access. Unity processes `Execute` for each entity that matches the
@@ -52,7 +52,9 @@ namespace Systems
                 return;
             }
 
-            float3 spawnPosition = new float3(Random.Range(spawner.xSpawnRange.x, spawner.xSpawnRange.y), Random.Range(spawner.ySpawnRange.x, spawner.ySpawnRange.y), Random.Range(spawner.zSpawnRange.x, spawner.zSpawnRange.y));
+            random = new Random((uint)(elapsedTime * 10000)); //TODO: This is awful
+
+            float3 spawnPosition = new float3(random.NextFloat(spawner.xSpawnRange.x, spawner.xSpawnRange.y), random.NextFloat(spawner.ySpawnRange.x, spawner.ySpawnRange.y), random.NextFloat(spawner.zSpawnRange.x, spawner.zSpawnRange.y));
 
             Entity newEntity = ecb.Instantiate(chunkIndex, spawner.prefab);
             ecb.SetComponent(chunkIndex, newEntity, LocalTransform.FromPosition(spawnPosition));

@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1622733048}
   - component: {fileID: 1622733049}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: w
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,6 +168,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4147220870342534419, guid: 37690946542c3464d842add63f1a13bc, type: 3}
   spawnRate: 2
+  xSpawnRange:
+    x: -5
+    y: 5
+  ySpawnRange:
+    x: -5
+    y: 5
+  zSpawnRange:
+    x: 0
+    y: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

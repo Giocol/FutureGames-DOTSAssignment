@@ -169,11 +169,11 @@ MonoBehaviour:
   prefab: {fileID: 4147220870342534419, guid: 37690946542c3464d842add63f1a13bc, type: 3}
   spawnRate: 2
   xSpawnRange:
-    x: -20
-    y: 5
-  ySpawnRange:
     x: -10
     y: 5
+  ySpawnRange:
+    x: -7
+    y: 7
   zSpawnRange:
     x: -1
     y: -1

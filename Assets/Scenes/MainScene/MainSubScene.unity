@@ -169,14 +169,14 @@ MonoBehaviour:
   prefab: {fileID: 4147220870342534419, guid: 37690946542c3464d842add63f1a13bc, type: 3}
   spawnRate: 2
   xSpawnRange:
-    x: -5
+    x: -20
     y: 5
   ySpawnRange:
-    x: -5
+    x: -10
     y: 5
   zSpawnRange:
-    x: 0
-    y: 0
+    x: -1
+    y: -1
 --- !u!1001 &6181463477580214903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5813509308321792002, guid: 5503038e4cc07734086e9785bc517cd4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.06
       objectReference: {fileID: 0}
     - target: {fileID: 5813509308321792002, guid: 5503038e4cc07734086e9785bc517cd4, type: 3}
       propertyPath: m_LocalRotation.w

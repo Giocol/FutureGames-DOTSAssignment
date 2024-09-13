@@ -7,5 +7,7 @@ namespace Components {
         public Entity projectilePrefab;
         public bool isShooting;
         public float3 spawnPosition;
+        public float shootingCooldown;
+        public float timeSinceLastShoot;
     }
 }

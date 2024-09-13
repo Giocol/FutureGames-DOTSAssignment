@@ -6,6 +6,7 @@ namespace Entities {
 
     public class ShooterAuthoring : MonoBehaviour {
         public GameObject projectilePrefab;
+        public float shootingCooldown = 2;
     }
 
     public class ShooterBaker : Baker<ShooterAuthoring> {
@@ -13,7 +14,9 @@ namespace Entities {
             Entity entity = GetEntity(TransformUsageFlags.Dynamic);
             AddComponent(entity, new Shooter {
                 projectilePrefab = GetEntity(authoring.projectilePrefab, TransformUsageFlags.Dynamic),
-                isShooting = false
+                isShooting = false,
+                shootingCooldown = authoring.shootingCooldown,
+                timeSinceLastShoot = authoring.shootingCooldown
             });
         }
     }

@@ -38,7 +38,7 @@ namespace Systems {
             mover.movementDirection = new float3(movementInput.x, movementInput.y, 0);
             shooter.isShooting = shootInput;
 
-            //just to test
+            //just to test, for some reason the moversystem doesn't get called on this
             //localTransform.Position += new float3(movementInput.x, movementInput.y, 0) ;
         }
     }

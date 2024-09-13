@@ -41,7 +41,7 @@ namespace Systems
         private void Execute([ChunkIndexInQuery] int chunkIndex, ref Despawner despawner, Entity entity) {
             despawner.timeAlive += time;
             if(despawner.timeAlive > despawner.timeToLive) {
-                ecb.DestroyEntity(0, entity);
+                ecb.DestroyEntity(chunkIndex, entity);
             }
         }
     }

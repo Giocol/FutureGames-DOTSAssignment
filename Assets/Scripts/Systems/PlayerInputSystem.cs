@@ -34,12 +34,11 @@ namespace Systems {
         public float2 movementInput;
 
         [BurstCompile]
-        private void Execute(ref Mover mover, ref Shooter shooter, PlayerTag playerTag) {
+        private void Execute(ref Mover mover, ref Shooter shooter, PlayerTag playerTag, LocalTransform localTransform) {
             mover.movementDirection = new float3(movementInput.x, movementInput.y, 0);
             shooter.isShooting = shootInput;
-
-            //just to test, for some reason the moversystem doesn't get called on this
-            //localTransform.Position += new float3(movementInput.x, movementInput.y, 0) ;
+            shooter.spawnPosition = localTransform.Position;
+            //TODO: shooting cooldown
         }
     }
 }
